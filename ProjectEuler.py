@@ -154,6 +154,50 @@ for i in range(1,499):
 for i,j,k in itertools.product(range(1,500), range(1,500), range(1,500)):
     if i**2 + j**2 == k**2 and i+j+k ==1000:
         print(i*j*k)
+        
+# Question 10
+
+
+def sum_primes(n):
+    primes = [2]
+    attempt = 3
+    sum=2
+    while attempt in range(3,n):
+        if all(attempt % prime != 0 for prime in primes):
+            primes.append(attempt)
+            sum+=attempt
+        attempt += 2
+    return sum
+
+sum_primes(2000000)
+
+# Problem 12
+# divisors list
+        
+for i in range(62370000,76576550):
+    sum.append(sum[-1] + i)
+sum
+factorlist=[]
+def factors():
+    for i in sum:
+        templist =[i]
+        for j in range(1,int(i**0.5)+1):
+            if i%j == 0:
+                templist.append(j)
+                if j != i/j:
+                    templist.append(i/j)
+        factorlist.append(templist)
+    elem = []
+    for list in factorlist:
+        elem.append(len(list))
+    return elem
+x =[]   
+x = (factors())
+type(x)
+if any( num >= 499 for num in x):
+    print(True)
+else:
+    print("Nope")
 
        
        
